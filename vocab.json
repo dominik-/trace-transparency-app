@@ -1,0 +1,110 @@
+{
+    "categories" : [
+        {
+            "id": "00",
+            "name" : "Identity Information",
+            "description" : "First and Last Name(s), date of birth, unique account identifier, gender, social media identifiers"
+        },
+        {
+            "id": "01",
+            "name": "Location Information",
+            "description": ""
+        },
+        {
+            "id": "02",
+            "name": "Size Information",
+            "description": ""
+        },
+        {
+            "id": "03",
+            "name": "Activity Information",
+            "description": ""
+        },
+        {
+            "id": "04",
+            "name": "Social Media Information",
+            "description": ""
+        }
+    ],
+    "purposes" : [
+        {
+            "id": "00",
+            "name": "Prodividing of Service",
+            "description": ""
+        },
+        {
+            "id": "01",
+            "name": "Business"
+        },
+        {
+            "id": "02",
+            "name": "Legal Compliance"
+        }
+    ],
+    "ttl" : [
+        {
+            "id":"00",
+            "name": "account-lifetime",
+            "description": ""
+        },
+        {
+            "id":"01",
+            "name": "unlimited",
+            "description": ""
+        },
+        {
+            "id":"02",
+            "name": "processing-only",
+            "description": ""
+        }
+    ],
+    "third-parties" : [
+        {
+            "id":"000",
+            "name":"facebook Europe",
+            "address": {
+                "office": "",
+                "country": "",
+                "zip": "",
+                "street": "",
+                "number": "",
+                "additional": ""
+            }
+        }
+    ],
+    "legal-bases" : [
+        {
+            "id":"00",
+            "name": "consent",
+            "description": "Where explicit consent by a user has been given."
+        },
+        {
+            "id":"01",
+            "name": "contractual",
+            "description": "Necessary to fulfill contract or provide service."
+        },
+        {
+            "id":"02",
+            "name": "legitimate-interest",
+            "description": "Legitimate interests by us or third parties."
+        }
+    ],
+    "legitimate-interests": [
+        {
+            "id":"00",
+            "name": "rights-protection",
+            "description": "Protect users or us from threats or harmful behaviour (e.g. fraud)."
+        },
+        {
+            "id":"01",
+            "name": "compliance",
+            "description": "Compliance with laws."
+        }
+    ],
+    "automation": [
+        {
+            "id": "00",
+            "name": "Derive Ranking in social community"
+        }
+    ]
+}

@@ -1,0 +1,164 @@
+services:
+  - id: calories
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work01
+    units:
+      - svc: userdata
+        work: noDelay
+      - svc: distances
+        work: noDelay
+    context:
+      tags:
+        - keyStatic: productIds
+          valueStatic: "rt2"
+        - keyStatic: purposes
+          valueStatic: "00"
+        - keyStatic: legal-basis
+          valueStatic: "00:00"
+        - keyStatic: categories-processing
+          valueStatic: "00,02,03"
+        - keyStatic: categories-storage
+          valueStatic: "03"
+        - keyStatic: storage-ttl
+          valueStatic: "00"
+        - keyStatic: recipients
+          valueStatic: ""
+        - keyStatic: sources
+          valueStatic: "none"
+        - keyStatic: automation
+          valueStatic: "01"
+      baggage:
+        - keyStatic: clientId
+          valueLength: 10
+  - id: distances
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work01
+    units:
+      - svc: routes
+        work: noDelay
+    context:
+      tags:
+        - keyStatic: productIds
+          valueStatic: "rt2"
+        - keyStatic: purposes
+          valueStatic: "00,01"
+        - keyStatic: legal-basis
+          valueStatic: "00:00;01:00"
+        - keyStatic: categories-processing
+          valueStatic: "01,03"
+        - keyStatic: categories-storage
+          valueStatic: "03"
+        - keyStatic: storage-ttl
+          valueStatic: "00"
+        - keyStatic: recipients
+          valueStatic: "none"
+        - keyStatic: sources
+          valueStatic: "none"
+        - keyStatic: automation
+          valueStatic: "none"
+  - id: leaderboards
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work01
+    units:
+      - work: work02
+        svc: userdata
+      - work: noDelay
+        svc: facebook
+      - svc: distances
+        work: noDelay
+    context:
+      tags:
+        - keyStatic: productIds
+          valueStatic: "rt2"
+        - keyStatic: purposes
+          valueStatic: "00"
+        - keyStatic: legal-basis
+          valueStatic: "00"
+        - keyStatic: categories-processing
+          valueStatic: "00,03,04"
+        - keyStatic: categories-storage
+          valueStatic: "03,04"
+        - keyStatic: storage-ttl
+          valueStatic: "00,00"
+        - keyStatic: recipients
+          valueStatic: "000"
+        - keyStatic: sources
+          valueStatic: "04:000"
+        - keyStatic: automation
+          valueStatic: ""
+      baggage:
+        - keyStatic: clientId
+          valueLength: 10
+  - id: userdata
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work02
+    context:
+      tags:
+        - keyStatic: productIds
+          valueStatic: "rt2"
+        - keyStatic: purposes
+          valueStatic: "00,01,02"
+        - keyStatic: legal-basis
+          valueStatic: "01,01,02"
+        - keyStatic: legitimate-interest
+          valueStatic: "01,02" #not sure about notation yet (both legitimate interest refer to the legitimate interest of purpose #3)
+        - keyStatic: categories-processing
+          valueStatic: "00"
+        - keyStatic: categories-storage
+          valueStatic: "00"
+        - keyStatic: storage-ttl
+          valueStatic: "01"
+        - keyStatic: recipients
+          valueStatic: ""
+        - keyStatic: automation
+          valueStatic: ""
+  - id: routes
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work02
+    context:
+      tags:
+        - keyStatic: purposes
+          valueStatic: "00"
+        - keyStatic: legal-basis
+          valueStatic: "00"
+        - keyStatic: legitimate-interest
+          valueStatic: ""
+        - keyStatic: categories-processing
+          valueStatic: ""
+        - keyStatic: categories-storage
+          valueStatic: "01"
+        - keyStatic: storage-ttl
+          valueStatic: "00"
+        - keyStatic: recipients
+          valueStatic: ""
+        - keyStatic: automation
+          valueStatic: ""
+  - id: facebook
+    envRef: env01
+    sinkRef: agent1
+    finalWork: work01
+    context:
+      tags:
+        - keyStatic: recipients
+          valueStatic: "001"
+sinks:
+  - id: agent1
+    envRef: env01
+workUnits:
+  - id: work01
+    type: exponential
+    params:
+      mean: 8000 #8ms
+  - id: work02
+    type: constant
+    params:
+      value: 5000 #5ms
+  - id: noDelay
+    type: constant
+    params:
+      value: 0

@@ -1,67 +1,66 @@
 {
-    "categories" : [
-        {
-            "id": "00",
-            "name" : "Identity Information",
-            "description" : "First and Last Name(s), date of birth, unique account identifier, gender, social media identifiers"
+    "categories": {
+        "00": {
+            "name": "Identity Information",
+            "description": "First and Last Name(s), date of birth, unique account identifier, gender, social media identifiers"
         },
-        {
-            "id": "01",
+        "01": {
             "name": "Location Information",
             "description": ""
         },
-        {
-            "id": "02",
+        "02": {
             "name": "Size Information",
             "description": ""
         },
-        {
-            "id": "03",
+        "03": {
             "name": "Activity Information",
             "description": ""
         },
-        {
-            "id": "04",
+        "04": {
             "name": "Social Media Information",
             "description": ""
         }
-    ],
-    "purposes" : [
-        {
-            "id": "00",
+    },
+    "purposes": {
+        "00": {
             "name": "Prodividing of Service",
             "description": ""
         },
-        {
-            "id": "01",
+        "01": {
             "name": "Business"
         },
-        {
-            "id": "02",
+        "02": {
             "name": "Legal Compliance"
         }
-    ],
-    "ttl" : [
-        {
-            "id":"00",
-            "name": "account-lifetime",
+    },
+    "ttl": {
+        "00": {
+            "name": "Account Lifetime",
             "description": ""
         },
-        {
-            "id":"01",
-            "name": "unlimited",
+        "01": {
+            "name": "Unlimited",
             "description": ""
         },
-        {
-            "id":"02",
-            "name": "processing-only",
+        "02": {
+            "name": "Processing Only",
             "description": ""
         }
-    ],
-    "third-parties" : [
-        {
-            "id":"000",
-            "name":"facebook Europe",
+    },
+    "third-parties": {
+        "000": {
+            "name": "facebook Europe - Friends API, incoming",
+            "address": {
+                "office": "",
+                "country": "",
+                "zip": "",
+                "street": "",
+                "number": "",
+                "additional": ""
+            }
+        },
+        "001": {
+            "name": "facebook Europe - Friends API, outgoing",
             "address": {
                 "office": "",
                 "country": "",
@@ -71,40 +70,41 @@
                 "additional": ""
             }
         }
-    ],
-    "legal-bases" : [
-        {
-            "id":"00",
-            "name": "consent",
+    },
+    "legal-bases": {
+        "00": {
+            "name": "Consent",
             "description": "Where explicit consent by a user has been given."
         },
-        {
-            "id":"01",
-            "name": "contractual",
+        "01": {
+            "name": "Contractual",
             "description": "Necessary to fulfill contract or provide service."
         },
-        {
-            "id":"02",
-            "name": "legitimate-interest",
+        "02": {
+            "name": "Legitimate Interest",
             "description": "Legitimate interests by us or third parties."
         }
-    ],
-    "legitimate-interests": [
-        {
-            "id":"00",
-            "name": "rights-protection",
+    },
+    "legitimate-interests": {
+        "00": {
+            "name": "Rights Protection",
             "description": "Protect users or us from threats or harmful behaviour (e.g. fraud)."
         },
-        {
-            "id":"01",
-            "name": "compliance",
+        "01": {
+            "name": "Compliance",
             "description": "Compliance with laws."
+        },
+        "02": {
+            "name": "Business Improvement",
+            "description": "Improvement of business-related activity, e.g. through feedback from customer service interactions."
         }
-    ],
-    "automation": [
-        {
-            "id": "00",
+    },
+    "automation": {
+        "00": {
             "name": "Derive Ranking in social community"
+        },
+        "01": {
+            "name": "Facebook feed updates"
         }
-    ]
+    }
 }

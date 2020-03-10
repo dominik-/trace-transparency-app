@@ -1,0 +1,15 @@
+\begin{tabular}{lllrll}
+\toprule
+{} &        trace\_id & span\_id &  duration &       operation\_name &                                               tags \\
+\midrule
+0 &  2c91df57b25d13 &   79616 &       312 &     distances-call-0 &  [\{key: 'internal.span.format', value\_type: 'st... \\
+1 &  2c91df57b25d13 &   55817 &        57 &      userdata-parent &  [\{key: 'categories-processing', value\_type: 's... \\
+2 &  2c91df57b25d13 &   29592 &       407 &  leaderboards-call-0 &  [\{key: 'internal.span.format', value\_type: 'st... \\
+3 &  2c91df57b25d13 &   43806 &      1973 &  leaderboards-call-1 &  [\{key: 'internal.span.format', value\_type: 'st... \\
+4 &  2c91df57b25d13 &   03238 &      1616 &      facebook-parent &  [\{key: 'recipients', value\_type: 'string', val... \\
+5 &  2c91df57b25d13 &   06373 &      2703 &  leaderboards-call-2 &  [\{key: 'internal.span.format', value\_type: 'st... \\
+6 &  2c91df57b25d13 &   70306 &      2334 &     distances-parent &  [\{key: 'recipients', value\_type: 'string', val... \\
+7 &  2c91df57b25d13 &   12097 &        45 &        routes-parent &  [\{key: 'categories-processing', value\_type: 's... \\
+8 &  2c91df57b25d13 &   10419 &     17068 &  leaderboards-parent &  [\{key: 'sampler.type', value\_type: 'string', v... \\
+\bottomrule
+\end{tabular}

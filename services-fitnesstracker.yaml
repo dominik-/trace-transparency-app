@@ -19,11 +19,7 @@ services:
         - keyStatic: categories-storage
           valueStatic: "03"
         - keyStatic: storage-ttl
-          valueStatic: "00"
-        - keyStatic: recipients
-          valueStatic: ""
-        - keyStatic: sources
-          valueStatic: ""
+          valueStatic: "03:00"
         - keyStatic: automation
           valueStatic: "01"
       baggage:
@@ -47,13 +43,7 @@ services:
         - keyStatic: categories-storage
           valueStatic: "03"
         - keyStatic: storage-ttl
-          valueStatic: "00"
-        - keyStatic: recipients
-          valueStatic: ""
-        - keyStatic: sources
-          valueStatic: ""
-        - keyStatic: automation
-          valueStatic: ""
+          valueStatic: "03:00"
   - id: leaderboards
     envRef: env01
     sinkRef: agent1
@@ -76,13 +66,7 @@ services:
         - keyStatic: categories-storage
           valueStatic: "03;04"
         - keyStatic: storage-ttl
-          valueStatic: "00;00"
-        - keyStatic: recipients
-          valueStatic: "000"
-        - keyStatic: sources
-          valueStatic: "000" #so by law (Art 14), we only need to state where personal data came from, not which categories? So no mapping, like "04:000" needed?
-        - keyStatic: automation
-          valueStatic: ""
+          valueStatic: "03:00;04:00"
       baggage:
         - keyStatic: clientId
           valueLength: 10
@@ -103,11 +87,7 @@ services:
         - keyStatic: categories-storage
           valueStatic: "00"
         - keyStatic: storage-ttl
-          valueStatic: "01"
-        - keyStatic: recipients
-          valueStatic: ""
-        - keyStatic: automation
-          valueStatic: ""
+          valueStatic: "00:01"
   - id: routes
     envRef: env01
     sinkRef: agent1
@@ -125,19 +105,19 @@ services:
         - keyStatic: categories-storage
           valueStatic: "01"
         - keyStatic: storage-ttl
-          valueStatic: "00"
-        - keyStatic: recipients
-          valueStatic: ""
-        - keyStatic: automation
-          valueStatic: ""
+          valueStatic: "01:00"
   - id: facebook
     envRef: env01
     sinkRef: agent1
     finalWork: work01
     context:
       tags:
+        - keyStatic: categories-processing
+          valueStatic: "00;04"
         - keyStatic: recipients
-          valueStatic: "001"
+          valueStatic: "000"
+        - keyStatic: sources
+          valueStatic: "000" #so by law (Art 14), we only need to state where personal data came from, not which categories? So no mapping, like "04:000" needed?
 sinks:
   - id: agent1
     envRef: env01

@@ -49,18 +49,7 @@
     },
     "third-parties": {
         "000": {
-            "name": "facebook Europe - Friends API, incoming",
-            "address": {
-                "office": "",
-                "country": "",
-                "zip": "",
-                "street": "",
-                "number": "",
-                "additional": ""
-            }
-        },
-        "001": {
-            "name": "facebook Europe - Friends API, outgoing",
+            "name": "facebook Europe",
             "address": {
                 "office": "",
                 "country": "",

@@ -14,14 +14,10 @@ services:
           valueStatic: "00"
         - keyStatic: legal-basis
           valueStatic: "00"
-        - keyStatic: categories-processing
+        - keyStatic: data-categories
           valueStatic: "00;02;03"
-        - keyStatic: categories-storage
-          valueStatic: "03"
         - keyStatic: storage-ttl
-          valueStatic: "03:00"
-        - keyStatic: automation
-          valueStatic: "01"
+          valueStatic: "00:00;02:00;03:01"
       baggage:
         - keyStatic: clientId
           valueLength: 10
@@ -38,12 +34,10 @@ services:
           valueStatic: "00;01"
         - keyStatic: legal-basis
           valueStatic: "00"
-        - keyStatic: categories-processing
+        - keyStatic: data-categories
           valueStatic: "01;03"
-        - keyStatic: categories-storage
-          valueStatic: "03"
         - keyStatic: storage-ttl
-          valueStatic: "03:00"
+          valueStatic: "01:00;03:01"
   - id: leaderboards
     envRef: env01
     sinkRef: agent1
@@ -61,12 +55,12 @@ services:
           valueStatic: "00"
         - keyStatic: legal-basis
           valueStatic: "00"
-        - keyStatic: categories-processing
+        - keyStatic: data-categories
           valueStatic: "00;03;04"
-        - keyStatic: categories-storage
-          valueStatic: "03;04"
         - keyStatic: storage-ttl
-          valueStatic: "03:00;04:00"
+          valueStatic: "00:00;03:01;04:01"
+        - keyStatic: automation
+          valueStatic: "01"
       baggage:
         - keyStatic: clientId
           valueLength: 10
@@ -82,12 +76,10 @@ services:
           valueStatic: "01;01;02"
         - keyStatic: legitimate-interest
           valueStatic: "01;02" #not sure about notation yet (both legitimate interest refer to the legitimate interest of purpose #3)
-        - keyStatic: categories-processing
-          valueStatic: "00"
-        - keyStatic: categories-storage
+        - keyStatic: data-categories
           valueStatic: "00"
         - keyStatic: storage-ttl
-          valueStatic: "00:01"
+          valueStatic: "00:02"
   - id: routes
     envRef: env01
     sinkRef: agent1
@@ -100,20 +92,20 @@ services:
           valueStatic: "00"
         - keyStatic: legitimate-interest
           valueStatic: ""
-        - keyStatic: categories-processing
-          valueStatic: ""
-        - keyStatic: categories-storage
+        - keyStatic: data-categories
           valueStatic: "01"
         - keyStatic: storage-ttl
-          valueStatic: "01:00"
+          valueStatic: "01:01"
   - id: facebook
     envRef: env01
     sinkRef: agent1
     finalWork: work01
     context:
       tags:
-        - keyStatic: categories-processing
+        - keyStatic: data-categories
           valueStatic: "00;04"
+        - keyStatic: storage-ttl
+          valueStatic: "00:00;04:00"
         - keyStatic: recipients
           valueStatic: "000"
         - keyStatic: sources

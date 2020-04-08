@@ -34,16 +34,16 @@
         }
     },
     "ttl": {
-        "00": {
-            "name": "Account Lifetime",
+		"00": {
+            "name": "No Storage",
             "description": ""
         },
         "01": {
-            "name": "Unlimited",
+            "name": "Account Lifetime",
             "description": ""
         },
         "02": {
-            "name": "Processing Only",
+            "name": "Unlimited",
             "description": ""
         }
     },
